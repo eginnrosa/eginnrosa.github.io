@@ -7,7 +7,7 @@ Author URI: http://wpdna.com
 Version: 1.1
 ------------------------------------------------------------------------------------------
 CSS INDEX
-=================== 
+===================
 1. Template DEFAULT CSS
 2. HEADER STYLES ONE
 3. SECTION TITLE
@@ -42,7 +42,7 @@ CSS INDEX
 16. CONTACT AREA STYLE
 17. CONTACT FORM STYLE TWO
 18. PRISING TABLE STYLE
-19. ACCORDION STYLES 
+19. ACCORDION STYLES
 20. ADAM MAP AREA HEIGHT
 21. NEWSLETTER AREA
 22. TAB AREA
@@ -99,10 +99,10 @@ button {
   outline: medium none;
   color: #4FC1F0;
 }
-.uppercase { 
+.uppercase {
     text-transform: uppercase;
 }
-.capitalize { 
+.capitalize {
     text-transform: capitalize;
 }
 h1,
@@ -125,7 +125,7 @@ h2 a,
 h3 a,
 h4 a,
 h5 a,
-h6 a { 
+h6 a {
     color: inherit;
 }
 h1 {
@@ -442,7 +442,7 @@ textarea {
 .mtb-150 { margin: 150px 0; }
 .mb-180 { margin-bottom: 180px }
 /*-------------------------------------
-    SECTION VARIATION 
+    SECTION VARIATION
 ---------------------------------------*/
 /*-------------------------------------------------------
     BACKGROUND COLOR VARIATION FOR SECTION
@@ -454,22 +454,22 @@ textarea {
 /*-------------------------------------
     BACKGROUND OPACITY SET
 ---------------------------------------*/
-.bg-opacity-black-10:before, .bg-opacity-black-20:before, 
-.bg-opacity-black-30:before, .bg-opacity-black-40:before, 
-.bg-opacity-black-50:before, .bg-opacity-black-60:before, 
-.bg-opacity-black-70:before, .bg-opacity-black-80:before, 
-.bg-opacity-black-90:before,  .bg-opacity-white-10:before,  
-.bg-opacity-white-20:before,  .bg-opacity-white-30:before,  
-.bg-opacity-white-40:before,  .bg-opacity-white-50:before,  
-.bg-opacity-white-60:before,  .bg-opacity-white-70:before,  
+.bg-opacity-black-10:before, .bg-opacity-black-20:before,
+.bg-opacity-black-30:before, .bg-opacity-black-40:before,
+.bg-opacity-black-50:before, .bg-opacity-black-60:before,
+.bg-opacity-black-70:before, .bg-opacity-black-80:before,
+.bg-opacity-black-90:before,  .bg-opacity-white-10:before,
+.bg-opacity-white-20:before,  .bg-opacity-white-30:before,
+.bg-opacity-white-40:before,  .bg-opacity-white-50:before,
+.bg-opacity-white-60:before,  .bg-opacity-white-70:before,
 .bg-opacity-white-80:before,  .bg-opacity-white-90:before{
 content: "";
-height: 100%; 
-left: 0; 
-position: absolute; 
-top: 0; 
-width: 100%; 
-z-index: -1; 
+height: 100%;
+left: 0;
+position: absolute;
+top: 0;
+width: 100%;
+z-index: -1;
 }
 .bg-opacity-black-10:before {  background: rgba(0, 0, 0, 0.1);}
 .bg-opacity-black-20:before {  background: rgba(0, 0, 0, 0.2);}
@@ -500,14 +500,14 @@ z-index: -1;
 .bg-4 { background: url(img/bg/4.jpg);}
 
 .bg-1, .bg-2, .bg-3, .bg-4, .bg-5, .bg-6, .bg-7, .bg-8, .bg-9, .bg-10{
-  background-attachment: fixed; 
-  background-clip: initial; 
-  background-color: rgba(0, 0, 0, 0); 
-  background-origin: initial; 
-  background-position: center center; 
-  background-repeat: no-repeat; 
-  background-size: cover; 
-  position: relative; 
+  background-attachment: fixed;
+  background-clip: initial;
+  background-color: rgba(0, 0, 0, 0);
+  background-origin: initial;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
   z-index: 0;
 }
 /*-------------------------------------
@@ -530,17 +530,17 @@ a.button {
 /*-------------------------------------
    BUTTONS VARIATION
 ---------------------------------------*/
-a.button.large  { 
-  padding: 0 40px; 
-  font-size: 13px;  
+a.button.large  {
+  padding: 0 40px;
+  font-size: 13px;
 }
 
-a.button.medium  { 
+a.button.medium  {
   padding: 0 30px;
 }
 
-a.button.small  { 
-  padding: 0 25px; 
+a.button.small  {
+  padding: 0 25px;
 }
 
 a.button.small {
@@ -615,7 +615,7 @@ a.button.extra-small {
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-left: 20px;
-  padding: 20px 0;  
+  padding: 20px 0;
 }
 .adam-header .navbar {
   padding: 10px 0;
@@ -627,7 +627,7 @@ a.button.extra-small {
   box-shadow: 0 1px 3px rgba(50, 50, 50, 0.2);
   padding: 0;
 }
-.adam-header .nav > li > a:focus, 
+.adam-header .nav > li > a:focus,
 .adam-header .nav > li > a:hover {
   background-color: transparent;
   text-decoration: none;
@@ -656,17 +656,17 @@ a.button.extra-small {
 .hover-style-one li a::before{
     top: 12px;
 }
-.hover-style-one li:hover > a::before, 
+.hover-style-one li:hover > a::before,
 .hover-style-one li.active > a::before{
   color: #222222;
   text-shadow: 7px 0 #222222, 14px 0 #222222;
 }
-.adam-header .hover-style-one li:hover > a::before, 
+.adam-header .hover-style-one li:hover > a::before,
 .adam-header .hover-style-one li.active > a::before{
   color: #ffffff;
   text-shadow: 7px 0 #ffffff, 14px 0 #ffffff;
 }
-.adam-header .top-nav-collapse .hover-style-one li:hover > a::before, 
+.adam-header .top-nav-collapse .hover-style-one li:hover > a::before,
 .adam-header .top-nav-collapse .hover-style-one li.active > a::before {
   color: #222;
   text-shadow: 7px 0 #222, 14px 0 #222;
@@ -674,18 +674,18 @@ a.button.extra-small {
 .hover-style-one li a{
   position: relative;
 }
-.adam-header .top-nav-collapse .hover-style-one li:hover > a::before, 
+.adam-header .top-nav-collapse .hover-style-one li:hover > a::before,
 .adam-header .top-nav-collapse .hover-style-one li.active > a::before {
   color: #222222;
   text-shadow: 7px 0 #222222, 14px 0 #222222;
 }
-.dropdown-menu-right .dropdown-submenu > a::after, 
+.dropdown-menu-right .dropdown-submenu > a::after,
 .navbar-right .dropdown-submenu > a::after {
 
   margin-left: -12px;
   margin-top: 4px;
 }
-.adam-header .navbar > .container .navbar-brand, 
+.adam-header .navbar > .container .navbar-brand,
 .adam-header .navbar > .container-fluid .navbar-brand {
   margin-left: 0;
 }
@@ -846,7 +846,7 @@ a.button.extra-small {
   margin-bottom: 30px;
 }
 /*-----------------------------------------
- 	4. SLIDER AREA 
+ 	4. SLIDER AREA
 ------------------------------------------*/
 .adam-slider-content > h2 {
   color: #fff;
@@ -887,7 +887,7 @@ a.button.extra-small {
 .adam-slider-active .slick-next::before {
   content: "";
 }
-.adam-slider-active .slick-prev, 
+.adam-slider-active .slick-prev,
 .adam-slider-active .slick-next {
   background: transparent none repeat scroll 0 0;
   border: medium none;
@@ -907,7 +907,7 @@ a.button.extra-small {
   width: 40px;
   z-index: 2;
 }
-.adam-slider-active:hover .slick-prev, 
+.adam-slider-active:hover .slick-prev,
 .adam-slider-active:hover .slick-next {
   opacity: 1;
 }
@@ -1191,7 +1191,7 @@ a.button.extra-small {
   position: static;
 }
 
-.portfolio-style-two .portfolio-item:hover .portfolio-cat, 
+.portfolio-style-two .portfolio-item:hover .portfolio-cat,
 .portfolio-style-two .portfolio-item:hover .portfolio-description h4 {
   opacity: 1;
   transform: translateY(0px);
@@ -1208,7 +1208,7 @@ a.button.extra-small {
 .portfolio-style-two .item-thumbnail::before {
   z-index: 2;
 }
-.portfolio-style-two  .portfolio-cat, 
+.portfolio-style-two  .portfolio-cat,
 .portfolio-style-two  .portfolio-description h4 {
   opacity: 1;
   transform: translateY(0);
@@ -1259,7 +1259,7 @@ a.button.extra-small {
   top: 50%;
   transform: translateY(-80%);
 }
-.portfolio-style-three .portfolio-item .portfolio-cat, 
+.portfolio-style-three .portfolio-item .portfolio-cat,
 .portfolio-style-three .portfolio-item .portfolio-description h4 {
   color: #fff;
   font-family: oswald;
@@ -1308,7 +1308,7 @@ a.button.extra-small {
   text-align: center;
   width: 100%;
 }
-.portfolio-style-four .portfolio-item .portfolio-cat, 
+.portfolio-style-four .portfolio-item .portfolio-cat,
 .portfolio-style-four .portfolio-item .portfolio-description h4 {
   opacity: 1;
   transform: translateY(0px);
@@ -1321,7 +1321,7 @@ a.button.extra-small {
 .portfolio-style-four .portfolio-item-content {
   border-radius: 4px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-  transition: .3s;  
+  transition: .3s;
 }
 .portfolio-style-four .portfolio-item-content:hover{
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
@@ -1372,7 +1372,7 @@ a.button.extra-small {
 .portfolio-style-five .portfolio-cat {
   overflow: hidden;
   padding-left: 0;
-transition-duration: 0.6s;  
+transition-duration: 0.6s;
 }
 .portfolio-style-five .item-thumbnail::before{
   background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
@@ -1380,11 +1380,11 @@ transition-duration: 0.6s;
 .portfolio-style-five .portfolio-description h4 a{
   margin: 0 0 5px;
 }
-.portfolio-style-five .portfolio-description h4 a:hover, 
+.portfolio-style-five .portfolio-description h4 a:hover,
 .portfolio-style-five .portfolio-cat a:hover {
   color: #bbb;
 }
-.portfolio-style-five .portfolio-description h4 a, 
+.portfolio-style-five .portfolio-description h4 a,
 .portfolio-style-five .portfolio-cat a {
   color: #fff;
   padding: 0;
@@ -1562,7 +1562,7 @@ transition-duration: 0.6s;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.read-more, 
+.read-more,
 .meta-info a {
   color: #232323;
   font-size: 11px;
@@ -1755,7 +1755,7 @@ transition-duration: 0.6s;
   position: relative;
   padding: 25px 0 25px 25px;
 }
-.media-left, 
+.media-left,
 .media > .pull-left {
   padding-right: 20px;
 }
@@ -2335,7 +2335,7 @@ input:focus,
   padding: 0;
   position: relative;
   margin: auto;
-  width: 80%;  
+  width: 80%;
 }
 .single-testimonial img {
   border-radius: 100%;
@@ -2433,12 +2433,12 @@ input:focus,
   padding: 0 30px;
   width: auto;
 }
-.contcat-form input:focus, 
+.contcat-form input:focus,
 .form-body textarea:focus{
   border: 1px solid rgba(0, 0, 0, 0.4)
 }
 /*--------------------------------------------------------
-  18. PRISING TABLE STYLE 
+  18. PRISING TABLE STYLE
 ---------------------------------------------------------*/
 .single-price-table {
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
@@ -2525,7 +2525,7 @@ sub.duration {
   max-width: 100%;
 }
 /*--------------------------------------------------------
-  19. ACCORDION STYLES  	
+  19. ACCORDION STYLES
 ---------------------------------------------------------*/
 .panel-default > .panel-heading {
   background-color: transparent;
@@ -2566,7 +2566,7 @@ sub.duration {
   content: "\f105";
 }
 /*-------------------------------------
-	20. ADAM MAP AREA HEIGHT 
+	20. ADAM MAP AREA HEIGHT
 ---------------------------------------*/
 #adam_map {
   height: 460px;
@@ -2677,8 +2677,8 @@ sub.duration {
 .adam-tab-style-two .tab-pane {
   padding: 0 20px;
 }
-.adam-tab-style-two .nav-tabs > li.active > a, 
-.adam-tab-style-two .nav-tabs > li.active > a:focus, 
+.adam-tab-style-two .nav-tabs > li.active > a,
+.adam-tab-style-two .nav-tabs > li.active > a:focus,
 .adam-tab-style-two .nav-tabs > li.active > a:hover {
   border: 1px solid #e5e5e5;
   color: #fff;
@@ -2853,4 +2853,32 @@ sub.duration {
   position: absolute;
   top: 0;
   z-index: -1;
+}
+
+
+
+
+/* OTHERS */
+#boxshadow {
+  position: relative;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  padding: 10px;
+  background: white;
+}
+
+#boxshadow img {
+  width: 100%;
+  border: 1px solid #8a4419;
+  border-style: inset;
+}
+
+#boxshadow::after {
+  content: '';
+  position: absolute;
+  z-index: -1; /* hide shadow behind image */
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  /* left: 15%; /* one half of the remaining 30% */ */
+  height: 100px;
+  bottom: 0;
 }
