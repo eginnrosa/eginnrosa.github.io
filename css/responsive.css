@@ -1,5 +1,5 @@
 /* -------------------------------------------------
-  Large Screen. 
+  Large Screen.
 ---------------------------------------------------*/
 @media (min-width: 1367px) and (max-width: 1920px){
 .mobile-menu-area{
@@ -9,10 +9,10 @@
 }
 
 /* -------------------------------------------------
-  Laptop Screen 
+  Laptop Screen
 ---------------------------------------------------*/
 @media (min-width: 1170px) and (max-width: 1366px) {
-.container {width:1200px}	
+.container {width:1200px}
 .mobile-menu-area{
   display: none;
 }
@@ -81,7 +81,7 @@
 
 
 /* -------------------------------------------------
-  Tablet Screen 
+  Tablet Screen
 ---------------------------------------------------*/
 @media (min-width: 768px) and (max-width: 991px) {
 .container {width:750px}
@@ -288,7 +288,7 @@
   Small Mobile
 ---------------------------------------------------*/
 @media (max-width: 767px) {
-.container {width:300px}	
+.container {width:300px}
 .portfolio-column-count-3 .portfolio-item {
   width: 100%;
 }
@@ -751,7 +751,7 @@ blockquote {
 .portfolio-style-four .portfolio-description {
   padding: 20px;
 }
-.dropdown-menu-right .dropdown-submenu > a::after, 
+.dropdown-menu-right .dropdown-submenu > a::after,
 .navbar-right .dropdown-submenu > a::after {
   margin-left: 6px;
   margin-top: 0;
@@ -793,7 +793,7 @@ sub.duration {
 
 }
 /* -------------------------------------------------
-  Large Mobile :480px. 
+  Large Mobile :480px.
 ---------------------------------------------------*/
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 .container {width:450px}
@@ -815,4 +815,16 @@ sub.duration {
 }
 
 
+}
+
+.pink-btn {
+  display: block;
+  width: 25%;
+  border: none;
+  background-color: #f95e9a;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  color: #ffffff;
 }
