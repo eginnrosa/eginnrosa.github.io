@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ESRD QIP</title>
+<meta charset="utf-8">
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<style type="text/css">
+
+
+/* On mouse hover, lighten state color */
+path:hover {
+	fill-opacity: .7;
+}
+
+/* Style for Custom Tooltip */
+div.tooltip {
+ 	position: absolute;
+	text-align: center;
+	vertical-align: middle;
+	width: 250px;
+	height: 50px;
+	padding: 2px;
+	font: 16px sans-serif;
+	background: white;
+	border: 0px;
+	border-radius: 8px;
+	pointer-events: none;
+}
+
+/* Legend Font Style */
+body {
+	font: 11px sans-serif;
+}
+
+/* Legend Position Style */
+.legend {
+	position:absolute;
+	left:800px;
+	top:350px;
+}
+
+</style>
+</head>
+<body class="w3-light-grey">
+<script type="text/javascript">
+
+
+/*  This visualization was made possible by modifying code provided by:
+
+Scott Murray, Choropleth example from "Interactive Data Visualization for the Web"
+https://github.com/alignedleft/d3-book/blob/master/chapter_12/05_choropleth.html
+
+Malcolm Maclean, tooltips example tutorial
+http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
+
+Mike Bostock, Pie Chart Legend
+http://bl.ocks.org/mbostock/3888852  */
+
+
+//Width and height of map
+var width = 960;
+var height = 500;
+
+var highColor = '#16B530'
+var lowColor = '#FB373D'
+
+// D3 Projection
+var projection = d3.geo.albersUsa()
+				   .translate([width/2, height/2])    // translate to center of screen
+				   .scale([1000]);          // scale things down so see entire US
+
+// Define path generator
+var path = d3.geo.path()               // path generator that will convert GeoJSON to SVG paths
+		  	 .projection(projection);  // tell path generator to use albersUsa projection
+
+
+// Define linear scale for output
+// var color = d3.scale.linear()
+// 			  .range(["rgb(213,222,217)","rgb(69,173,168)","rgb(84,36,55)","rgb(217,91,67)"]);
+
+var legendText = ["State", "Value"];
+
+//Create SVG element and append map to the SVG
+var svg = d3.select("body")
+			.append("svg")
+			.attr("width", width)
+			.attr("height", height)
+			;
+
+// Append Div for tooltip to SVG
+var div = d3.select("body")
+		    .append("div")
+    		.attr("class", "tooltip")
+    		.style("opacity", 0);
+
+// Load in my states data!
+d3.csv("../db/csv/avgstatescores.csv", function(data) {
+	var dataArray = [];
+	    for (var d = 0; d < data.length; d++) {
+	      dataArray.push(parseFloat(data[d]["VAT Catheter Measure Score"]))
+	    }
+	    var minVal = d3.min(dataArray)
+	    var maxVal = d3.max(dataArray)
+	    var ramp = d3.scale.linear().domain([minVal,maxVal]).range([lowColor,highColor])
+
+// Load GeoJSON data and merge with states data
+d3.json("us-states.json", function(json) {
+
+// Loop through each state data value in the .csv file
+for (var i = 0; i < data.length; i++) {
+
+	// Grab State Name
+	var dataState = data[i].state;
+
+	// Grab data value
+	var dataValue = data[i]["VAT Catheter Measure Score"];
+
+	// Find the corresponding state inside the GeoJSON
+	for (var j = 0; j < json.features.length; j++)  {
+		var jsonState = json.features[j].properties.name;
+
+		if (dataState == jsonState) {
+
+		// Copy the data value into the JSON
+		json.features[j].properties["VAT Catheter Measure Score"] = dataValue;
+
+		// Stop looking through the JSON
+		break;
+		}
+	}
+}
+
+// Bind the data to the SVG and create one path per GeoJSON feature
+svg.selectAll("path")
+    .data(json.features)
+    .enter()
+    .append("path")
+    .attr("d", path)
+    .style("stroke", "#fff")
+    .style("stroke-width", "1")
+    .style("fill", function(d) { return ramp(d.properties["VAT Catheter Measure Score"]) } )
+    .on("mouseover", function(d) {
+         div.transition()
+             .duration(200)
+             .style("opacity", .9);
+         div.html(`State: ${d.properties.name}<br>State Average: ${d.properties["VAT Catheter Measure Score"]}`)
+				 .style("left", (d3.event.pageX) + "px")
+				 .style("top", (d3.event.pageY - 28) + "px");
+			 })
+     .on("mouseout", function(d) {
+         div.transition()
+             .duration(500)
+             .style("opacity", 0)
+     });
+  });
+
+
+// add a legend
+  var w = 140, h = 300;
+
+  var key = d3.select("body")
+    .append("svg")
+    .attr("width", w)
+    .attr("height", h)
+    .attr("class", "legend");
+
+    var legend = key.append("defs")
+      .append("svg:linearGradient")
+      .attr("id", "gradient")
+      .attr("x1", "100%")
+      .attr("y1", "0%")
+      .attr("x2", "100%")
+      .attr("y2", "100%")
+      .attr("spreadMethod", "pad");
+
+    legend.append("stop")
+      .attr("offset", "0%")
+      .attr("stop-color", highColor)
+      .attr("stop-opacity", 1);
+
+    legend.append("stop")
+      .attr("offset", "100%")
+      .attr("stop-color", lowColor)
+      .attr("stop-opacity", 1);
+
+    key.append("rect")
+      .attr("width", w - 100)
+      .attr("height", h)
+      .style("fill", "url(#gradient)")
+      .attr("transform", "translate(0,10)");
+
+    var y = d3.scale.linear()
+      .range([h, 0])
+      .domain([minVal, maxVal]);
+
+    var yAxis = d3.svg.axis().scale(y).orient("right");
+
+    key.append("g")
+      .attr("class", "y axis")
+      .attr("transform", "translate(41,10)")
+      .call(yAxis)
+
+});
+
+</script>
+</body>
+</html>
